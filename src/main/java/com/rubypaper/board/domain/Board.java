@@ -15,7 +15,7 @@ import java.util.Date;
 @Entity
 public class Board {
     @Id
-    @Generated
+    @GeneratedValue
     private Long seq;
 
     private String title;

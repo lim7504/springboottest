@@ -28,7 +28,7 @@ public class Member {
     private boolean enabled;
 
     @OneToMany(mappedBy = "member", fetch = FetchType.EAGER)
-    private List<Board> boardList = new ArrayList<>();
+    private List<Board> boardList = new ArrayList<Board>();
 
 
 }
