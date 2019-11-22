@@ -1,4 +1,4 @@
-package com.rubypaper.boardweb;
+package com.rubypaper;
 
 import com.rubypaper.board.domain.Board;
 import com.rubypaper.board.domain.Member;
