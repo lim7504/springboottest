@@ -10,6 +10,9 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.support.PageableExecutionUtils;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class BoardServiceImpl implements BoardService {
 
@@ -45,4 +48,10 @@ public class BoardServiceImpl implements BoardService {
         Pageable pageable = PageRequest.of(0,10, Sort.Direction.DESC,"seq");
         return boardRepo.getBoardList(pageable);
     }
+
+    @Override
+    public List<Board> getBoardList_json(Board board) {
+        return boardRepo.getBoardList_json();
+    }
+
 }

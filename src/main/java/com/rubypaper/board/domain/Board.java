@@ -13,9 +13,15 @@ import java.util.Date;
 @Setter
 @ToString(exclude = "member")
 @Entity
+@TableGenerator(name = "BOARD_SEQ_GENERATOR"
+                ,table = "ALL_SEQUENCES"
+                ,pkColumnValue = "BOARD_SEQ"
+                ,initialValue = 0
+                ,allocationSize = 1)
 public class Board {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "BOARD_SEQ_GENERATOR")
+//    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long seq;
 
     private String title;
@@ -38,3 +44,4 @@ public class Board {
         member.getBoardList().add(this);
     }
 }
+
